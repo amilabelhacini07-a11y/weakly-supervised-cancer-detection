@@ -120,7 +120,7 @@ histopathology images of lymph node sections.
 ## Author
 
 Amila Belhacini
-M.Sc. in Artificial Intelligence - Biomedical Imaging
+M.Sc. in Artificial Intelligence 
 University of 20 August 1955, Skikda, Algeria
 amilabelhacini07@gmail.com
 GitHub: https://github.com/amilabelhacini07-a11y
