@@ -68,11 +68,6 @@ histopathology images of lymph node sections.
 ### ROC Curves - ResNet50 vs ViT-B/16
 ![ROC Comparison](results/comparison_roc.png)
 
-### Training Curves
-ResNet50: ![ResNet50 Curves](results/resnet50_training_curves.png)
-ViT-B/16: ![ViT Curves](results/vit_training_curves.png)
-MIL: ![MIL Curves](results/mil_training_curves.png)
-
 ## Key Findings
 
 - MIL with weak supervision (AUC: 0.9860) outperforms both fully supervised
@@ -83,9 +78,8 @@ MIL: ![MIL Curves](results/mil_training_curves.png)
 - ViT-B/16 shows overfitting after epoch 3 on this dataset size,
   highlighting the need for regularisation in small medical datasets
 - Bag-level class imbalance (75.6% positive) addressed via weighted
-  BCE loss - a necessary step for clinical AI fairness
-- Sensitivity/specificity tradeoff observed across all models -
-  MIL achieves the best balance for clinical deployment
+  BCE loss
+- MIL achieves the best sensitivity/specificity balance for clinical deployment
 
 ## Technical Stack
 
@@ -95,26 +89,26 @@ MIL: ![MIL Curves](results/mil_training_curves.png)
 | timm | Pretrained ResNet50 and ViT-B/16 |
 | HuggingFace Datasets | PCam dataset loading |
 | Scikit-learn | AUC, metrics evaluation |
-| Matplotlib / Seaborn | Visualisations |
-| Google Colab (T4 GPU) | Training environment |
+| Matplotlib | Visualisations |
+| Google Colab T4 GPU | Training environment |
 | Git | Version control |
 
 ## Repository Structure
 
-notebooks/
-    01_data_exploration.ipynb    - Dataset loading and visualisation
-    02_MIL_pipeline.ipynb        - Weakly supervised MIL pipeline
-results/
-    sample_images.png            - PCam sample patches
-    class_distribution.png       - Class balance chart
-    resnet50_training_curves.png - ResNet50 training curves
-    resnet50_roc.png             - ResNet50 ROC curve
-    vit_training_curves.png      - ViT-B/16 training curves
-    comparison_roc.png           - ResNet50 vs ViT ROC curves
-    mil_training_curves.png      - MIL training curves
-    mil_roc.png                  - MIL ROC curve
-    final_comparison.png         - AUC comparison all models
-README.md
+    notebooks/
+        01_data_exploration.ipynb    -> Dataset loading and visualisation
+        02_MIL_pipeline.ipynb        -> Weakly supervised MIL pipeline
+    results/
+        sample_images.png            -> PCam sample patches
+        class_distribution.png       -> Class balance chart
+        resnet50_training_curves.png -> ResNet50 training curves
+        resnet50_roc.png             -> ResNet50 ROC curve
+        vit_training_curves.png      -> ViT-B/16 training curves
+        comparison_roc.png           -> ResNet50 vs ViT ROC curves
+        mil_training_curves.png      -> MIL training curves
+        mil_roc.png                  -> MIL ROC curve
+        final_comparison.png         -> AUC comparison all models
+    README.md
 
 ## References
 
@@ -126,7 +120,7 @@ README.md
 ## Author
 
 Amila Belhacini
-M.Sc. in Artificial Intelligence
+M.Sc. in Artificial Intelligence - Biomedical Imaging
 University of 20 August 1955, Skikda, Algeria
 amilabelhacini07@gmail.com
 GitHub: https://github.com/amilabelhacini07-a11y
