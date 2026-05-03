@@ -110,6 +110,26 @@ histopathology images of lymph node sections.
         final_comparison.png         -> AUC comparison all models
     README.md
 
+
+## Attention Visualisation — MIL Interpretability
+
+One of the key advantages of attention-based MIL is interpretability.
+The attention weights reveal which patches the model focused on when
+making its prediction — without any patch-level labels during training.
+
+### Attention Heatmap — Cancer Bag
+![Attention Heatmap](results/attention_heatmap.png)
+
+### Top 5 vs Bottom 5 Attention Patches
+![Top Bottom Attention](results/top_bottom_attention.png)
+
+**Key observation:** The model assigned highest attention to patches
+showing loose, irregular tissue architecture and tumour stroma features,
+while ignoring dense uniform cell clusters. This aligns with pathological
+understanding of tumour microenvironment invasion patterns — demonstrating
+that the attention mechanism learned clinically meaningful features
+from slide-level labels alone.
+
 ## References
 
 - Veeling et al., Rotation Equivariant CNNs for Digital Pathology, MICCAI 2018
